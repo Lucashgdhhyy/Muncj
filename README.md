@@ -47,3 +47,11 @@ end
    -- The function that takes place when the button is pressed
    end,
 })
+
+local Button = Tab:CreateButton({
+   Name = "Back to X Azure",
+   Interact = 'Click',
+   Callback = function()                             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucashgdhhyy/XAzure/main/README.md"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
