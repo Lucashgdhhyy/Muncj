@@ -51,6 +51,35 @@ end
 })
 
 local Button = Tab:CreateButton({
+   Name = "Auto Money OP(Need Keyboard)",
+   Interact = 'Click',
+   Callback = function()                             local me = game.Players.LocalPlayer.Character
+local toggle = false;
+
+function start()
+    while (toggle) do
+        me.HumanoidRootPart.CFrame = CFrame.new(1280, 39, 1220)
+        wait(0.1);
+    end
+end
+
+function onKeyPress(actionName, userInputState, inputObject)
+    if userInputState == Enum.UserInputState.Begin then
+        toggle = not toggle;
+        if toggle then
+            start();
+        end
+    end
+end
+
+game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.T)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+
+
+local Button = Tab:CreateButton({
    Name = "Back to X Azure",
    Interact = 'Click',
    Callback = function()                             loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucashgdhhyy/XAzure/main/README.md"))()
